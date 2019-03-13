@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head>
+
+        <title>QuestionView</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+        <link rel ="stylesheet" href="style.css"></link>
+
+    </h:head>
+    <h:body>
+        <h:form>
+    <p class="jumbotron" id="testTitle">Welcome to Test </p>
+
+
+    <div id="question1">
+        <div class="page-header" >
+            <p  class="questionTitle">Question:</p>
+            <h:outputText styleClass="question" value="The array is initiated at index :"></h:outputText>
+        </div>
+        <h:selectOneRadio value="" styleClass="list-group">
+        <h:panelGroup layout="block" styleClass="answers">
+
+
+            <h:panelGroup layout="block" styleClass="list-group-item">
+                <f:selectItem itemValue="1" itemLabel="Item 1">1</f:selectItem>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="list-group-item">
+                <f:selectItem itemValue="1" itemLabel="Item 2">2</f:selectItem>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="list-group-item">
+                <f:selectItem itemValue="1" itemLabel="Item 3">3</f:selectItem>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="list-group-item">
+                <f:selectItem itemValue="1" itemLabel="Item 4">4</f:selectItem>
+            </h:panelGroup>
+        </h:panelGroup>   </h:selectOneRadio>
+
+
+
+
+
+
+        <div class="sub">
+            <h:commandButton type="button" class="btn btn-success" value="Submit"></h:commandButton>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <ul class="pager">
+            <li><a href="#">Previous</a></li>
+
+                <li><a href="#question1">1</a></li>
+                <li><a href="#question2">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+
+            <li><a href="#">Next</a></li>
+        </ul>
+    </div>
+    </h:form>
+    </h:body>
+</f:view>
+</html>

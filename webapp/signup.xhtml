@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <script src="gen_validatorv4.js" type="text/javascript"></script>
+    <title>Log In</title>
+    <style type="text/css">
+        .formPosition {
+            width: 40%;
+            margin: 24px;
+        }
+
+    </style>
+
+</h:head>
+<h:body>
+<center><div class="jumbotron" ><h2>Sign Up</h2></div></center>
+    <div class="container">
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <div class="row">
+    <div class="form_bg">
+<f:view>
+
+    <h:form styleClass="formPosition" id="myform" name="myform">
+    <div class="form-group">
+
+        <div id='myform_Name_errorloc' class="error_strings"></div>
+        <h:outputLabel for="username">Username: </h:outputLabel><br></br>
+        <h:inputText id="username" value="#{logInController.username}" styleClass="form-control"></h:inputText><br></br>
+
+        <h:outputLabel for="password">Password: </h:outputLabel><br></br>
+        <h:inputSecret id="password" value="#{logInController.password}" styleClass="form-control"></h:inputSecret><br></br>
+
+        <h:outputLabel for="re-password">Re-Password: </h:outputLabel><br></br>
+        <h:inputSecret id="re-password" styleClass="form-control" value="#{logInController.repassword}"></h:inputSecret><br></br>
+
+        <div id='myform_Email_errorloc' class="error_strings"></div>
+        <h:outputLabel for="Email">Email: </h:outputLabel><br></br>
+        <h:inputText id="Email" value="#{logInController.email}" styleClass="form-control"></h:inputText><br></br>
+
+        <h:outputLabel for="roleId">Role: </h:outputLabel><br></br>
+        <h:selectOneMenu id="roleId" value="#{logInController.role}" styleClass="form-control">
+
+            <f:selectItems value="#{logInController.getRoles()}" var="c"
+                           itemLabel="#{c.getRole()}" itemValue="#{c.getRole()}" />
+
+        </h:selectOneMenu>
+        <br></br>
+        <h:commandButton value="Submit" action="#{logInController.saveNewUser()}" styleClass="btn btn-primary"></h:commandButton>
+    </div>
+    </h:form>
+</f:view>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+    var frmvalidator = new Validator("myform");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
+    frmvalidator.addValidation("FirstName","req","Please enter your User  Name");
+    frmvalidator.addValidation("FirstName","maxlen=20",
+        "Max length for User Name is 20");
+    frmvalidator.addValidation("Email","maxlen=50");
+    frmvalidator.addValidation("Email","req");
+    frmvalidator.addValidation("Email","email");
+
+    </script>
+</h:body>
+</html>

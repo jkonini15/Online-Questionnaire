@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <title>Profile</title>
+    <style type="text/css">
+        .formPosition {
+            width: 40%;
+            margin: 24px;
+        }
+
+    </style>
+</h:head>
+<h:body>
+    <center><div class="jumbotron" ><h2>Profile</h2></div></center>
+    <div class="container">
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div class="row">
+            <div class="form_bg">
+                <f:view>
+
+                    <h:form styleClass="formPosition">
+                        <div class="form-group">
+
+                            <h:outputLabel for="username">Username: </h:outputLabel><br></br>
+                            <h:inputText id="username" value="#{logInController.currentUser.username}" styleClass="form-control"></h:inputText><br></br>
+
+
+                            <h:outputLabel for="email">Email: </h:outputLabel><br></br>
+                            <h:inputText id="email" value="#{logInController.currentUser.email}" styleClass="form-control"></h:inputText><br></br>
+
+                            <h:outputLabel>Password:</h:outputLabel>
+                            <h:inputSecret id="role" value="#{logInController.currentUser.password}" styleClass="form-control"></h:inputSecret><br></br>
+
+                            <br></br>
+                            <div style="display: inline">
+                                <h:commandButton value="Save" action="#{logInController.updateUser()}" styleClass="btn btn-primary"></h:commandButton>
+                            </div>
+                        </div>
+                    </h:form>
+                </f:view>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>
